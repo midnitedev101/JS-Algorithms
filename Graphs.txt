@@ -1,0 +1,88 @@
+/***** Graphs *****/
+
+Graph Definition:
+
+A graph is represented as a set of objects where some pair of objects
+are connected by links. The individual objects are represented by points aka
+"vertices" and the links are called "edges".
+
+          A         B
+          o---------o
+          |         |
+          |         |
+          |         |
+          o---------o---------o
+          C         D         E
+
+V = {a, b, c, d, e}
+E = {ab, ac, bd, cd, de}
+
+Two nodes are "adjacent" to each other when they are connected through an edge.
+B is adjacent to A and D, E is adjacent to D, and D is adjacent to B, C, and E.
+
+"Paths" represent a sequence of edged between 2 vertices. ABCD represents a
+path from A to D.
+
+Graphs are divided these categories:
+
+1) Directed Graph - Edged have direction
+2) Undirected Graph - Edges does not represent any direction
+
+Ways to represent graphs:
+
+1) Adjacency Matrix
+
+  A 2-dimensional matrix in which the rows represent source vertices and
+  columns represent destination vertices.
+
+      A B C D E
+    -----------
+  A | 0 1 1 0 0
+  B | 1 0 0 1 0
+  C | 1 0 0 1 0
+  D | 0 1 1 0 1
+  E | 0 0 0 1 0
+
+2) Adjacency List
+
+  Vertices are stored as records or objects and every vertex stores a list of
+  adjacent vertices.
+
+  a is adjacent to b, c
+  b is adjacent to a, d
+  c is adjacent to a, d
+  d is adjacent to b, c, e
+  e is adjacent to d
+
+3) Incidence Matrix
+
+  A 2-dimensional boolean matrix in which the rows represent the vertices and
+  columns represent the edges.
+
+  If graph is presented like this:
+
+        A   e1    B
+        o---------o
+        |         |
+    e2  |         | e3
+        |         |
+        o---------o---------o
+        C   e4    D   e5    E
+
+  Then its incidence matrix is represented like this:
+
+          e1  e2  e3  e4  e5
+        --------------------
+      A | 1   1   0   0   0
+      B | 1   0   1   0   0
+      C | 0   1   0   1   0
+      D | 0   0   1   1   1
+      E | 0   0   0   0   1
+
+Sources:
+https://en.wikipedia.org/wiki/Graph_(abstract_data_type)
+https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/
+https://www.geeksforgeeks.org/implementation-graph-javascript/
+https://en.wikipedia.org/wiki/Adjacency_matrix
+https://en.wikipedia.org/wiki/Adjacency_list
+https://en.wikipedia.org/wiki/Incidence_matrix
